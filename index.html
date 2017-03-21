@@ -46,6 +46,12 @@
                         }
         </style>
         <script type="text/javascript">
+            var temps = ["22:20","17:24","10:29","15:30","22:31","00:33",
+                         "12:23","17:02","23:05","13h50","8:45","14:02",
+                         "00:08","10:18","23:55","7:13","19:21","16:29",
+                         "11:42","8:10","15:03","1:37","12:07","20:11",
+                         "20:44","06:12","11:13","14:05"]
+
             function ajoutImages() {
                 var contenu = document.getElementById("Contenu");
                 var images = document.createElement("div");
@@ -66,6 +72,9 @@
                         info.innerText = (i < 8) ?
                             21 + i + "/02/2017" :
                             info.innerText = i - 7 + "/03/2017";
+                        
+                        info.innerHTML += "</br>" + temps[i - 1];
+                        
                         imageDiv.appendChild(info);
                         
                         image = document.createElement("img");
