@@ -13,47 +13,75 @@
                 /background: green;
                 height: 100%;
                 width: 100%;
+                font-family: Karla;
             }
                 #Images {
+                    display: inline;
                     position: absolute;
                     top:0;right:0;bottom:0;left:0;
-                    /background: blue;
                     width: 97%;
                     height: 100%;
                     margin: 1.50%;
                 }
                     #Texte {
                         width: 100%;
-                        margin: 1.25%;
-                        font-family: Karla;
+                        margin-left: 1%;
                         font-size: 28pt;
-                        /background: purple;
                     }
-                    img {
+                    #Image {
+                        display: inline-block;
                         width: 22.5%;
                         margin: 1%;
                     }
+                        #Info {
+                            position: absolute;
+                            width: 100%;
+                            margin-left: 0.2%;
+                            margin-bottom: 5%;
+                            font-size: 14pt;
+                            color: white;
+                        }
+                        img {
+                            width: 100%;
+                        }
         </style>
         <script type="text/javascript">
             function ajoutImages() {
                 var contenu = document.getElementById("Contenu");
+                var images = document.createElement("div");
+                images.id = "Images";
 
                 var titre = document.createElement("div");
                 titre.id = "Texte";
                 titre.innerText = "28";
-                contenu.appendChild(titre);
+                images.appendChild(titre);
 
                 for (var i = 1; i <= 28; i++) {
-                    image = document.createElement("img");
-                    image.src = "images/" + i + ".jpg";
-                    contenu.appendChild(image);
+                    var imageDiv = document.createElement("div");
+                    imageDiv.id = "Image";
+                    
+                        var info = document.createElement("div");
+                        info.id = "Info";
+                        
+                        if (i < 29)
+                            info.innerText = 21 + i + "/02/2017";
+                        else
+                            info.innerText = i + "/03/2017";
+                        imageDiv.appendChild(info);
+                        
+                        image = document.createElement("img");
+                        image.src = "images/" + i + ".jpg";
+                        imageDiv.appendChild(image);
+
+                    images.appendChild(imageDiv);
                 }
+                contenu.appendChild(images);
 
                 var auteur = document.createElement("div");
                 auteur.id = "Texte";
-                auteur.style = "font-style:italic";
+                auteur.style = "font-style:italic;font-size:15pt";
                 auteur.innerText = "Par Noémie Zozé";
-                contenu.appendChild(auteur);
+                images.appendChild(auteur);
             }
         </script>
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
@@ -61,36 +89,6 @@
     <body onload="javascript:ajoutImages()">
         <div id="Boite">
             <div id="Contenu">
-                <!--
-                <img src="images/1.jpg"></img>
-                <img src="images/2.jpg"></img>
-                <img src="images/3.jpg"></img>
-                <img src="images/4.jpg"></img>
-                <img src="images/5.jpg"></img>
-                <img src="images/6.jpg"></img>
-                <img src="images/7.jpg"></img>
-                <img src="images/8.jpg"></img>
-                <img src="images/9.jpg"></img>
-                <img src="images/10.jpg"></img>
-                <img src="images/11.jpg"></img>
-                <img src="images/12.jpg"></img>
-                <img src="images/13.jpg"></img>
-                <img src="images/14.jpg"></img>
-                <img src="images/15.jpg"></img>
-                <img src="images/16.jpg"></img>
-                <img src="images/17.jpg"></img>
-                <img src="images/18.jpg"></img>
-                <img src="images/19.jpg"></img>
-                <img src="images/20.jpg"></img>
-                <img src="images/21.jpg"></img>
-                <img src="images/22.jpg"></img>
-                <img src="images/23.jpg"></img>
-                <img src="images/24.jpg"></img>
-                <img src="images/25.jpg"></img>
-                <img src="images/26.jpg"></img>
-                <img src="images/27.jpg"></img>
-                <img src="images/28.jpg"></img>
-                -->
             </div>
         </div>
     </body>
