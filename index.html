@@ -5,10 +5,93 @@
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="">
-
         <title></title>
+        <style>
+            #Boite {
+                position: absolute;
+                top:0;right:0;bottom:0;left:0;
+                /background: green;
+                height: 100%;
+                width: 100%;
+            }
+                #Images {
+                    position: absolute;
+                    top:0;right:0;bottom:0;left:0;
+                    /background: blue;
+                    width: 97%;
+                    height: 100%;
+                    margin: 1.50%;
+                }
+                    #Texte {
+                        width: 100%;
+                        margin: 1.25%;
+                        font-family: Karla;
+                        font-size: 28pt;
+                        /background: purple;
+                    }
+                    img {
+                        width: 22.5%;
+                        margin: 1%;
+                    }
+        </style>
+        <script type="text/javascript">
+            function ajoutImages() {
+                var contenu = document.getElementById("Contenu");
 
+                var titre = document.createElement("div");
+                titre.id = "Texte";
+                titre.innerText = "28";
+                contenu.appendChild(titre);
+
+                for (var i = 1; i <= 28; i++) {
+                    image = document.createElement("img");
+                    image.src = "images/" + i + ".jpg";
+                    contenu.appendChild(image);
+                }
+
+                var auteur = document.createElement("div");
+                auteur.id = "Texte";
+                auteur.style = "font-style:italic";
+                auteur.innerText = "Par Noémie Zozé";
+                contenu.appendChild(auteur);
+            }
+        </script>
+        <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     </head>
-    <body>
+    <body onload="javascript:ajoutImages()">
+        <div id="Boite">
+            <div id="Contenu">
+                <!--
+                <img src="images/1.jpg"></img>
+                <img src="images/2.jpg"></img>
+                <img src="images/3.jpg"></img>
+                <img src="images/4.jpg"></img>
+                <img src="images/5.jpg"></img>
+                <img src="images/6.jpg"></img>
+                <img src="images/7.jpg"></img>
+                <img src="images/8.jpg"></img>
+                <img src="images/9.jpg"></img>
+                <img src="images/10.jpg"></img>
+                <img src="images/11.jpg"></img>
+                <img src="images/12.jpg"></img>
+                <img src="images/13.jpg"></img>
+                <img src="images/14.jpg"></img>
+                <img src="images/15.jpg"></img>
+                <img src="images/16.jpg"></img>
+                <img src="images/17.jpg"></img>
+                <img src="images/18.jpg"></img>
+                <img src="images/19.jpg"></img>
+                <img src="images/20.jpg"></img>
+                <img src="images/21.jpg"></img>
+                <img src="images/22.jpg"></img>
+                <img src="images/23.jpg"></img>
+                <img src="images/24.jpg"></img>
+                <img src="images/25.jpg"></img>
+                <img src="images/26.jpg"></img>
+                <img src="images/27.jpg"></img>
+                <img src="images/28.jpg"></img>
+                -->
+            </div>
+        </div>
     </body>
 </html>
