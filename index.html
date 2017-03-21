@@ -63,10 +63,9 @@
                         var info = document.createElement("div");
                         info.id = "Info";
                         
-                        if (i < 29)
-                            info.innerText = 21 + i + "/02/2017";
-                        else
-                            info.innerText = i + "/03/2017";
+                        info.innerText = (i < 8) ?
+                            21 + i + "/02/2017" :
+                            info.innerText = i - 7 + "/03/2017";
                         imageDiv.appendChild(info);
                         
                         image = document.createElement("img");
